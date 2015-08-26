@@ -3,4 +3,5 @@ A WP plugin template for Tuning Synesthesia. Its origianl code was taken from [W
 
 ##Quick Setup
 
-change its file names and variable names at 4 parts in 'plugin.php' and 1 part in 'includes/class-tspt.php'
+change plugin file names and variable names at 4 parts in 'plugin.php' and 1 part in 'includes/class-tspt.php'
+
