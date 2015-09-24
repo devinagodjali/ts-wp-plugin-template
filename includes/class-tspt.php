@@ -207,15 +207,17 @@ class Tspt {
      */
     public function enqueue_scripts() {
         wp_register_script($this->_token . '-plugins',
-                           esc_url($this->assets_url) . 'js/plugins' . $this->script_suffix . '.js', array('jquery'),
-                           $this->_version, true);
+            esc_url($this->assets_url) . 'js/plugins' . $this->script_suffix . '.js', array('jquery'),
+            $this->_version, true);
         wp_enqueue_script($this->_token . '-plugins');
 
         wp_register_script($this->_token . '-frontend',
-                           esc_url($this->assets_url) . 'js/frontend' . $this->script_suffix . '.js', array('jquery'),
-                           $this->_version, true);
+            esc_url($this->assets_url) . 'js/frontend' . $this->script_suffix . '.js', array('jquery'),
+            $this->_version, true);
         wp_enqueue_script($this->_token . '-frontend');
+
     } // End enqueue_scripts ()
+
 
     /**
      * Load frontend CSS.
@@ -228,7 +230,7 @@ class Tspt {
         wp_register_style( $this->_token . '-frontend', esc_url( $this->assets_url ) . 'css/frontend' . $this->script_suffix . '.css', array(), $this->_version, false );
         wp_enqueue_style( $this->_token . '-frontend' );
 
-        wp_register_style($this->_token . '-dummystyle', esc_url( plugins_url('',__FILE__) ) . '/dummystyle' . $this->script_suffix . '.css', array(), $this->_version, false );
+        wp_register_style($this->_token . '-dummystyle', esc_url( $this->assets_url ) . 'css/dummystyle' . $this->script_suffix . '.css', array(), $this->_version, false );
     } // End enqueue_styles ()
 
 

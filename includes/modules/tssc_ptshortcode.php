@@ -1,6 +1,6 @@
 <?php
 	/**
-	 * Shortcode Name: 	TS PT Shortcode
+	 * Shortcode Name: 	TS PTShortcode
 	 * Function Name: 	ptshortcode
 	 * Shortcode Tag: 	[ts_ptshortcode]
 	 * Description: 	Shortcode for TS WP Plugin Template Shortcode. It simply outputs '$content'.
@@ -10,8 +10,8 @@
 
 
 	
-if(!class_exists("TS_PT_Shortcode")){
-	class TS_PT_Shortcode{
+if(!class_exists("TS_PTShortcode")){
+	class TS_PTShortcode{
 
 		/**
 		 * The single instance of shortcode class.

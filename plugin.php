@@ -44,7 +44,6 @@ if (!function_exists('tspt')) {
 		 **/
 
 		require_once( 'includes/class-' . $_token . '.php' );
-		//require_once( 'includes/modules/tssc_pt.php' );
 		// activate addons one by one from modules directory
         foreach(glob(dirname(__FILE__)  . '/includes/modules/*.php') as $module){
             require_once($module);
@@ -56,7 +55,8 @@ if (!function_exists('tspt')) {
 		 * @return object pn
 		 */
 		$instance = tspt::instance( __FILE__, $_token, $_version );
-		$instance->shortcodes = TS_PT_Shortcode::instance( $instance );
+		$instance->ptshortcode = TS_PTShortcode::instance( $instance );
+		$instance->ptshortcodeajax = TS_PTShortcodeajax::instance( $instance );
 		return $instance;
 	}
 }
