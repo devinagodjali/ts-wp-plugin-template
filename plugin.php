@@ -8,6 +8,7 @@
 	 * Author URI:        http://tuningsynesthesia.com/
 	 * Requires at least: 3.2.0
 	 * Tested up to:      3.4.0
+	 * Plugin Type:       Piklist
 	 * Text Domain:       tspt
 	 * Domain Path:       /lang
 	 * License:	  		  ISC
@@ -49,7 +50,7 @@ if (!function_exists('tspt')) {
             require_once($module);
         }
 		/**
-		 * Piklist inclusion
+		 * Piklist Checker inclusion
 		 * @since   1.2.0
 		 **/
 		add_action('init', 'tspt_picklist_checker', 0 );
@@ -74,9 +75,7 @@ if (!function_exists('tspt')) {
 if (!function_exists('tspt')) {
 	function tspt_picklist_checker(){
 		if(is_admin()) {
-
 			include_once( 'includes/class-piklist-checker.php');
-
 			if (!piklist_checker::check(__FILE__)) {
 				return;
 			}
