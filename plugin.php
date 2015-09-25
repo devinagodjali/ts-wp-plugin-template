@@ -49,6 +49,11 @@ if (!function_exists('tspt')) {
             require_once($module);
         }
 		/**
+		 * Piklist inclusion
+		 * @since   1.2.0
+		 **/
+		add_action('init', 'tspt_picklist_checker', 0 );
+		/**
 		 * Returns the main instance of pn to prevent the need to use globals.
 		 *
 		 * @since  1.0.0
@@ -60,8 +65,25 @@ if (!function_exists('tspt')) {
 		return $instance;
 	}
 }
+/**
+ * Piklist Checker: Notify users from your plugin when Piklist is not active.
+ *
+ * @since   1.2.0
+ * @return  False when piklist is not active
+ */
+if (!function_exists('tspt')) {
+	function tspt_picklist_checker(){
+		if(is_admin()) {
 
-	/**
+			include_once( 'includes/class-piklist-checker.php');
+
+			if (!piklist_checker::check(__FILE__)) {
+				return;
+			}
+		}
+	}
+}
+/**
      * Get the current plugin data.
      * @since   1.0.0
      * @return  An array contains plugin data 
