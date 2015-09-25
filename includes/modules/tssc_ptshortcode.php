@@ -8,7 +8,7 @@
 	 * Depricated Shortcode Tag: NA
 	 */
 
-
+//d
 	
 if(!class_exists("TS_PTShortcode")){
 	class TS_PTShortcode{
