@@ -14,7 +14,7 @@ change plugin file names and variable names at 4 parts in 'plugin.php' and 1 par
 |   +--module
 |     +--tssc_pt.php
 ```
-###1. Open the tss_pt.php file
+###1. Open the tssc_pt.php file
 ###2. Change file name to the shortcode name 
 	eg. 
 	shortcode name: infocircle
@@ -30,3 +30,4 @@ change plugin file names and variable names at 4 parts in 'plugin.php' and 1 par
      * Depricated Shortcode Tag: NA
      */
 ```
+
