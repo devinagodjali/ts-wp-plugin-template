@@ -12,14 +12,27 @@ change plugin file names and variable names at 4 parts in 'plugin.php' and 1 par
 |   +--admin.js
 |   +--class-tspt.php
 |   +--module
-|     +--tssc_pt.php
+|   | +--tssc_pt.php
 ```
+
 ###1. Open the tssc_pt.php file
-###2. Change file name to the shortcode name 
+###2. Change file name using the shortcode name 
 	eg. 
 	shortcode name: infocircle
 	file name become: tssc_infocircle.php
 ###3. Change shortcode description name, ect.
+
+```shortcode
+    /**
+    * Shortcode Name: 	TS PT Shortcode
+    * Function Name: 	ptshortcode
+    * Shortcode Tag: 	[ts_ptshortcode]
+    * Description: 	Shortcode for TS WP Plugin Template Shortcode. It simply outputs '$content'.
+    * URI: 		http://tuningsynesthesia.com/
+    * Depricated Shortcode Tag: NA
+    */
+```
+Change it to:
 ```shortcode
     /**
      * Shortcode Name: 	TS Info circle
@@ -30,4 +43,8 @@ change plugin file names and variable names at 4 parts in 'plugin.php' and 1 par
      * Depricated Shortcode Tag: NA
      */
 ```
-
+###4. Every TS_PT_Shortcode replace with the new shortcode name
+`eg.
+ TS_PT_Shortcode change to TS_InfoCircle`
+###5. So do the ts_ptshortcode 
+` ts_ptshortcode to ts_infocircle'
