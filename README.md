@@ -48,3 +48,8 @@ Change it to:
  TS_PT_Shortcode change to TS_InfoCircle`
 ###5. So do the ts_ptshortcode 
 ` ts_ptshortcode to ts_infocircle'
+
+###6. Input the Javacript file inside the frontend.js
+###7. If you download it from GitHub you need to `npm install`
+###8. The parent(public.php) and the child
+###9. and grunt the code
