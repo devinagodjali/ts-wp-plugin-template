@@ -1,9 +1,9 @@
 #Setup
-***
 
 ###Setup Project
-      Download or clone the folder to your computer
-###Installing node module inside the folder
+> 1. Download or clone the folder to your computer
+> 2. Installing node module inside the folder
+  
 ###Changing Name and Data inside
 1. In plugin.php
 	1. Plugin Name
