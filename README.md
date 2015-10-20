@@ -1,20 +1,58 @@
 #Setup
 
+!For PC user make sure you have python and node.js installed
+
+##Folder Structure
+```
+ts-wp-plugin-template
+|-- assets
+|   |-- css
+|   |   |-- frontend.css
+|   |   |-- frontend.min.css
+|   |   |-- dummystyle.css
+|   |   |-- dummystyle.min.css
+|   |   |-- admin.css
+|   |   `-- admin.min.css
+|   |-- js
+|   |   |-- frontend.js
+|   |   |-- frontend.min.js
+|   |   |-- plugin.js
+|   |   |-- plugin.min.js
+|   |   |-- admin.js
+|   |   `-- admin.min.js
+|   `-- sass
+|       |-- frontend.scss
+|       `-- admin.scss
+|-- config.rb
+|-- gruntfile.js
+|-- includes
+|   |-- class-tspt.php
+|   `-- modules
+|       |-- tssc_ptshortcode.php
+|       `-- tssc_ptshortcodeajax.php
+|-- lang
+|-- LICENSE
+|-- package.json
+|-- plugin.php
+`-- README.md
+```
+
 ###Setup Project
 1. Download or clone ts-wp-plugin-template to your computer
-2. Open ts-wp-plugin-template and install node_module using `npm install`
-, For PC user make sure you have python and node.js installed
+2. In your terminal/cli navigate to the plugin directory ts-wp-plugin-template
+3. Install node_module using the command `npm install`
   
 ###Changing Name and Data
 1. In plugin.php
 	* Plugin Name
-	-> Change the name of the plugin to the shortcode name eg. __testercode__
+	-> Name of the plugin. 
+		* Example in this tutorial we will have a plugin name __Tester Code__
 	* Author Name
 	-> Use author's full name
 	* Text Domain
 	-> Change it to some unique name
-		* eg: Text Domain: tspt, change it to __tstc__
-	* Change every __tspt__ inside the plugin.php to __tstc__
+		* eg: Text Domain: tspt, becausause our plugin name is tester code we use the accronym and change it to __tstc__
+	* Change every __tspt__ in plugin.php to __tstc__
 	
 	 ```php
     	/*
@@ -48,14 +86,15 @@
 	 	*/
 		```
      	
-2. In __include__ folder change the __class-tspt.php__ to __class-tstc.php__
+2. In folder __include__ change the name of __class-tspt.php__ to __class-tstc.php__
+	* Also change the class name to tstc
 3. In package.json
 4. In readme file
 
 ****
 
-####After done with all the folder data and name try to activated the plugin
-	there are already two ready shortcode inside to test your plugin, 
+####After done with all the folder data and name try to activated the plugin to test your plugin
+	there are already two ready shortcode inside you can use
 	1. ts_ptshortcode: simple shortcode to input $content | [ts_ptshortcode] [/ts_ptshortcode]
 	2. ts_ptshortcodeajax: shortcode with ajax | [ts_ptshortcodeajax] [/ts_ptshortcodeajax]
 ****
@@ -73,7 +112,20 @@
 			//change to add_shortcode("ts_testercode", array($this, "ptshortcode"));
 		}
 	```
+	* Exception for the very beginning of code you will have to make a little arrangement, like here:
+	```php
+	if(!class_exists("TS_PTShortcode")){
+	class TS_PTShortcode{
 	
+	}}
+	```
+	Becareful when replacing every name, for this you must to change the uppercase to and it should appear like this:
+	```php
+	if(!class_exists("TS_Testercode")){
+	class TS_Testercode{
+	
+	}}
+	```
 	
    4. Write your code after /* Shortcode */ comment, example::
    
@@ -94,17 +146,17 @@
 		return ' Hello World ';
 	}
    ```
-   5. In plugin.php add `$instance` for ts_testercode
+   5. In plugin.php adding new `$instance` for __TS_Testercode__ get the name of the class
    	
    	```php
    	$instance = tspt::instance( __FILE__, $_token, $_version );
 	$instance->ptshortcode = TS_PTShortcode::instance( $instance );
 	$instance->ptshortcodeajax = TS_PTShortcodeajax::instance( $instance );
-	//$instance->testercode = TS_TesterCode::instance($instance);
+	//$instance->testercode = TS_Testercode::instance($instance);
 	return $instance;
 	```
    6. Remove __ts_ptshortcode.php__ and __ts_ptshortcodeajax.php__
-   	* Remove their `$instance` from plugin.php
+   	* Also remove their `$instance` in plugin.php
    
 ##Feature
 1. In __assets__ folder will have css, js, and also sass you can modified
