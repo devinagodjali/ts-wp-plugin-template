@@ -54,7 +54,7 @@
 
 ****
 
-####After done with all the folder data and name try to run the plugin
+####After done with all the folder data and name try to activated the plugin
 	there are already to ready shortcode inside to test your plugin, 
 	1. ts_ptshortcode: simple shortcode to input $content
 	2. ts_ptshortcode: shortcode with ajax
@@ -70,9 +70,10 @@
    	public function __construct( $parent ) {
 			$this->parent = $parent;
 			add_shortcode("ts_ptshortcode", array($this,"ptshortcode"));
+			//change to add_shortcode("ts_testercode", array($this, "ptshortcode"));
 		}
 	```
-   4. Write your code after /* Shortcode */ comment
+   4. Write your code after /* Shortcode */ comment, example:
    
    ```php
    /**--------------------------------------------------
@@ -86,6 +87,10 @@
 		 *  @return Shortcode main output in html
 		 *
 		 */
+		 
+	public function testercode($atts, $content){
+		return ' Hello World ';
+	}
    ```
   
    
