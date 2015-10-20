@@ -9,11 +9,11 @@
 1. In plugin.php
 	* Plugin Name
 	-> Change the name of the plugin to the shortcode name eg. __testercode__
-	* Author name
+	* Author Name
 	-> Use author's full name
 	* Text Domain
-	-> change it to some unique name
-		* eg: TEXT DOMAIN: tspt change it to __tstc__
+	-> Change it to some unique name
+		* eg: Text Domain: tspt, change it to __tstc__
 	* Change every __tspt__ inside the plugin.php to __tstc__
 	
 	 ```php
@@ -48,23 +48,23 @@
 	 	*/
 		```
      	
-2. In __Include__ folder change the __class-tspt.php__ to __class-tstc.php__
+2. In __include__ folder change the __class-tspt.php__ to __class-tstc.php__
 3. In package.json
-4. In Readme file
+4. In readme file
 
 ****
 
 ####After done with all the folder data and name try to activated the plugin
 	there are already to ready shortcode inside to test your plugin, 
-	1. ts_ptshortcode: simple shortcode to input $content
-	2. ts_ptshortcode: shortcode with ajax
+	1. ts_ptshortcode: simple shortcode to input $content | [ts_ptshortcode] [/ts_ptshortcode]
+	2. ts_ptshortcodeajax: shortcode with ajax | [ts_ptshortcodeajax] [/ts_ptshortcodeajax]
 ****
 
 #To Create Shortcode
-### Make a new `php` file inside modules folde
-   1. Name it according to shortcode name eg. ts_testercode.php
-   2. Copy the code from ts_ptshortcode.php or ts_ptshortcodeajax.php to ts_testercode.php
-   3. Replace all ts_ptshortcode with ts_testercode
+### Make a new `php` file inside modules folder
+   1. Name it according to shortcode name eg. __ts_testercode.php__
+   2. Copy the code from __ts_ptshortcode.php__ or __ts_ptshortcodeajax.php__ to __ts_testercode.php__
+   3. Replace all __ts_ptshortcode__ with __ts_testercode__
    
    ```php
    	public function __construct( $parent ) {
@@ -73,7 +73,9 @@
 			//change to add_shortcode("ts_testercode", array($this, "ptshortcode"));
 		}
 	```
-   4. Write your code after /* Shortcode */ comment, example:
+	
+	
+   4. Write your code after /* Shortcode */ comment, example::
    
    ```php
    /**--------------------------------------------------
@@ -92,8 +94,27 @@
 		return ' Hello World ';
 	}
    ```
-  
+   5. In plugin.php add `$instance` for ts_testercode
+   	
+   	```php
+   	$instance = tspt::instance( __FILE__, $_token, $_version );
+	$instance->ptshortcode = TS_PTShortcode::instance( $instance );
+	$instance->ptshortcodeajax = TS_PTShortcodeajax::instance( $instance );
+	//$instance->testercode = TS_TesterCode::instance($instance);
+	return $instance;
+	```
+   6. Remove __ts_ptshortcode.php__ and __ts_ptshortcodeajax.php__
+   	* Remove their `$instance` from plugin.php
    
+##Feature
+1. In __assets__ folder will have css, js, and also sass you can modified
+   * css -> frontend.css
+   * js  -> frontend.js
+   * sass -> frontend.js
+   
+   >Everytime you change the sass, js and the sass make sure to use `grunt`,
+   >use `grunt watch` in the beginning of editing,
+   >make sure to `grunt build` every time the editing done
 
 
 
