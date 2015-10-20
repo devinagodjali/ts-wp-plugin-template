@@ -1,8 +1,8 @@
 #Setup
 
 ###Setup Project
-> 1. Download or clone ts-wp-plugin-template to your computer
-> 2. Open ts-wp-plugin-template and install node_module using `npm install`
+1. Download or clone ts-wp-plugin-template to your computer
+2. Open ts-wp-plugin-template and install node_module using `npm install`
 , For PC user make sure you have python and node.js installed
   
 ###Changing Name and Data
@@ -16,7 +16,7 @@
 		* eg: TEXT DOMAIN: tspt change it to __tstc__
 	* Change every __tspt__ inside the plugin.php to __tstc__
 	
-	 ```shortcode
+	 ```php
     	/*
 	 * Plugin Name:       TS WP Plugin Template
 	 * Version:           1.1.0
@@ -32,7 +32,7 @@
 	 */
 	```
 		Change it to:	
-		```shortcode
+		```php
 		/*
 	 	* Plugin Name:       TS Tester Code
 	 	* Version:           1.0.0
@@ -61,8 +61,35 @@
 ****
 
 #To Create Shortcode
-###1. Make a new `php` file inside modules folder
-	Copy rtg
+### Make a new `php` file inside modules folde
+   1. Name it according to shortcode name eg. ts_testercode.php
+   2. Copy the code from ts_ptshortcode.php or ts_ptshortcodeajax.php to ts_testercode.php
+   3. Replace all ts_ptshortcode with ts_testercode
+   
+   ```php
+   	public function __construct( $parent ) {
+			$this->parent = $parent;
+			add_shortcode("ts_ptshortcode", array($this,"ptshortcode"));
+		}
+	```
+   4. Write your code after /* Shortcode */ comment
+   
+   ```php
+   /**--------------------------------------------------
+		 *
+		 *	Shortcode 
+		 *
+		 * -------------------------------------------------- */
+		/**
+		 *
+		 *	Function: ptshortcode.
+		 *  @return Shortcode main output in html
+		 *
+		 */
+   ```
+  
+   
+
 
 
     
