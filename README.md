@@ -55,7 +55,7 @@
 ****
 
 ####After done with all the folder data and name try to activated the plugin
-	there are already to ready shortcode inside to test your plugin, 
+	there are already two ready shortcode inside to test your plugin, 
 	1. ts_ptshortcode: simple shortcode to input $content | [ts_ptshortcode] [/ts_ptshortcode]
 	2. ts_ptshortcodeajax: shortcode with ajax | [ts_ptshortcodeajax] [/ts_ptshortcodeajax]
 ****
