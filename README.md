@@ -1,7 +1,7 @@
 #About
 A WP plugin template for Tuning Synesthesia. Its origianl code was taken from [Wordpress-plugin-template](https://github.com/hlashbrooke/WordPress-Plugin-Template) by hlashbrooke and modified for some purpose.
 ## Versions available
-	```branch
+
 	ts-wp-plugin-template
 	|-- master / ver-default
 	|-- ver-ajax
@@ -9,7 +9,7 @@ A WP plugin template for Tuning Synesthesia. Its origianl code was taken from [W
 	`-- ver-piklist
 	
 	//This tutorial is using ver-ajax
-	```
+
 	
 * v1.0.0 master is the default template 
 * v1.1.0 ver-ajax has ajax function inside
@@ -24,10 +24,10 @@ A WP plugin template for Tuning Synesthesia. Its origianl code was taken from [W
 
 | Required Installation	| Mac	| Windows | Notes (For Windows) |
 |---		|---	|---  	|---	|
-| 1. Python	| installed by default	| required for node.js | [v2.7.3 required](https://nodejs.org/en/download/) |
-| 2. Node.js 	| [required](http://blog.teamtreehouse.com/install-node-js-npm-mac)	| [required](https://nodejs.org/en/download/) |	|
-| 3. Ruby 		| installed by default	| required for SASS| 	|
-| 4. SASS 		| [required](http://sass-lang.com/install)	| required  |	|
+| 1. Python	| installed by default	| required |  [required v2.7.3 for node.js](https://nodejs.org/en/download/) |
+| 2. Node.js 	| [required](http://blog.teamtreehouse.com/install-node-js-npm-mac)	| [required](https://nodejs.org/en/download/) | required for npm	|
+| 3. Ruby 		| installed by default	| required	| required for SASS	|
+| 4. SASS 		| [required](http://sass-lang.com/install)	| required  | ruby gems	|
 | 5. Grunt	| [required](http://gruntjs.com/getting-started)| [required](http://gruntjs.com/getting-started) |
 | 6. Compass 	| [required](http://thesassway.com/beginner/getting-started-with-sass-and-compass)	| required | ruby gems & [required for SASS](http://thesassway.com/beginner/getting-started-with-sass-and-compass) |
 
