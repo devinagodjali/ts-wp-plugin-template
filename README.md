@@ -1,6 +1,27 @@
 #Setup
 
-!For PC user make sure you have python and node.js installed
+###Prerequisites
+
+**Windows User need to have**
+
+| Installed	|		|
+|---		|---	|
+| Ruby 		| required for [installing SASS](http://sass-lang.com/install)	|
+| Python	| v2.7.3 recommended	|
+| Node.js 	| require python  	|
+| SASS 		| ruby gems 	|
+| Grunt		| require node.js	|
+| Compass 	| ruby gems  	|
+| GitHub Account |   	|
+| Git Shell |   	|
+
+**Mac user need to have**
+* Node.js
+* SASS
+* Grunt
+* Compass
+* Have a GIT account
+* Git for desktop
 
 ##Folder Structure
 ```
@@ -69,7 +90,7 @@ ts-wp-plugin-template
 	 * License:	      ISC
 	 */
 	```
-		Change it to:	
+		After:	
 		```php
 		/*
 	 	* Plugin Name:       TS Tester Code
@@ -86,46 +107,47 @@ ts-wp-plugin-template
 	 	*/
 		```
      	
-2. In folder __include__ change the name of __class-tspt.php__ to __class-tstc.php__
-	* Also change the class name to tstc
+2. In folder __include__ change __class-tspt.php__ to __class-tstc.php__
+	* Also change the class name inside __class-tstc.php__ to __tstc__
 3. In package.json
 4. In readme file
 
 ****
 
-####After done with all the folder data and name try to activated the plugin to test your plugin
-	there are already two ready shortcode inside you can use
+####After done with all the folder data and name, try to activate the plugin to test your plugin
+	there are already two ready shortcode inside you can use:
 	1. ts_ptshortcode: simple shortcode to input $content | [ts_ptshortcode] [/ts_ptshortcode]
 	2. ts_ptshortcodeajax: shortcode with ajax | [ts_ptshortcodeajax] [/ts_ptshortcodeajax]
 ****
 
 #To Create Shortcode
 ### Make a new `php` file inside modules folder
-   1. Name it according to shortcode name eg. __ts_testercode.php__
-   2. Copy the code from __ts_ptshortcode.php__ or __ts_ptshortcodeajax.php__ to __ts_testercode.php__
-   3. Replace all __ts_ptshortcode__ with __ts_testercode__
+   1. Name it according to plugin name eg. __ts_testercode.php__
+   2. Copy the code from __ts_ptshortcode.php__ or __ts_ptshortcodeajax.php__ (if using ajax) to __ts_testercode.php__
+   3. Replace every __ts_ptshortcode__ with __ts_testercode__
    
    ```php
    	public function __construct( $parent ) {
 			$this->parent = $parent;
 			add_shortcode("ts_ptshortcode", array($this,"ptshortcode"));
-			//change to add_shortcode("ts_testercode", array($this, "ptshortcode"));
+			//change the code to: add_shortcode("ts_testercode", array($this, "testercode"));
 		}
 	```
-	* Exception for the very beginning of code you will have to make a little arrangement, like here:
+	* Becareful in very beginning of the code, It has a upper-case letter 
 	```php
 	if(!class_exists("TS_PTShortcode")){
 	class TS_PTShortcode{
 	
 	}}
 	```
-	Becareful when replacing every name, for this you must to change the uppercase to and it should appear like this:
+	Becareful when replacing every name, if you change it like the one in the template it becoming like this:
 	```php
-	if(!class_exists("TS_Testercode")){
-	class TS_Testercode{
+	if(!class_exists("TS_TesterCode")){
+	class TS_TesterCode{
 	
 	}}
 	```
+	This class will be use later in plugin.php so be sure of the class name.
 	
    4. Write your code after /* Shortcode */ comment, example::
    
@@ -146,28 +168,46 @@ ts-wp-plugin-template
 		return ' Hello World ';
 	}
    ```
-   5. In plugin.php adding new `$instance` for __TS_Testercode__ get the name of the class
+   5. In plugin.php adding new `$instance` for __ts_testercode.php__, get the class name
    	
    	```php
    	$instance = tspt::instance( __FILE__, $_token, $_version );
 	$instance->ptshortcode = TS_PTShortcode::instance( $instance );
 	$instance->ptshortcodeajax = TS_PTShortcodeajax::instance( $instance );
-	//$instance->testercode = TS_Testercode::instance($instance);
+	//$instance->testercode = TS_TesterCode::instance($instance);
 	return $instance;
 	```
    6. Remove __ts_ptshortcode.php__ and __ts_ptshortcodeajax.php__
    	* Also remove their `$instance` in plugin.php
    
 ##Feature
-1. In __assets__ folder will have css, js, and also sass you can modified
-   * css -> frontend.css
-   * js  -> frontend.js
-   * sass -> frontend.js
+1. __Assets__ folder has stylingsheet folder & Javascript folder
+
+	As you can see in the folder structure, every folder content more than 1 file, the css, js, and sass folder 	that you can use are
+	
+	* css -> frontend.css
+   	* js  -> frontend.js
+   	* sass -> frontend.js
    
-   >Everytime you change the sass, js and the sass make sure to use `grunt`,
-   >use `grunt watch` in the beginning of editing,
-   >make sure to `grunt build` every time the editing done
+   >Everytime you change the sass and js file make sure to use `grunt`,
+   >use `grunt watch` in the beginning of editing for watching every change,
+   >make sure to `grunt build` every time the editing is done
 
-
+2. ts-wp-plugin-template has branch each branch have a different function 
+	```branch
+	ts-wp-plugin-template
+	|-- master / ver-default
+	|-- ver-ajax
+	|-- ver-ajax+piklist
+	`-- ver-piklist
+	
+	//This tutorial is using ver-ajax
+	```
+	 
+	* master is the default template 
+	* ver-ajax has ajax function inside
+	* ver-ajax+piklist has ajax and also [piklist](https://piklist.com/)
+	* ver-piklist has [piklist](https://piklist.com/) inside
+  
 
     
