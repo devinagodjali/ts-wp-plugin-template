@@ -50,7 +50,7 @@ ts-wp-plugin-template
 	* Author Name
 	-> Use author's full name
 	* Text Domain
-	-> Change it to some unique name
+	-> Change it to some unique name base on plugin name
 		* eg: Text Domain: tspt, becausause our plugin name is tester code we use the accronym and change it to __tstc__
 	* Change every __tspt__ in plugin.php to __tstc__
 	
