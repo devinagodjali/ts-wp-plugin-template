@@ -1,19 +1,46 @@
+#About
+A WP plugin template for Tuning Synesthesia. Its origianl code was taken from [Wordpress-plugin-template](https://github.com/hlashbrooke/WordPress-Plugin-Template) by hlashbrooke and modified for some purpose.
+## Versions available
+	```branch
+	ts-wp-plugin-template
+	|-- master / ver-default
+	|-- ver-ajax
+	|-- ver-ajax+piklist
+	`-- ver-piklist
+	
+	//This tutorial is using ver-ajax
+	```
+	
+* v1.0.0 master is the default template 
+* v1.1.0 ver-ajax has ajax function inside
+* v1.1.0 ver-piklist has [piklist](https://piklist.com/) inside
+* v1.2.0 ver-ajax+piklist has ajax and also [piklist](https://piklist.com/)
+
+  
+
 #Setup
 
 ###Prerequisites
 
-**Windows User need to have**
-
-| 		| Mac	| Windows install | Notes (For Windows) |
+| Required Installation	| Mac	| Windows | Notes (For Windows) |
 |---		|---	|---  	|---	|
-| Python	| already installed by default	| required | [v2.7.3 recommended](https://nodejs.org/en/download/) |
-| Node.js 	| [required](http://blog.teamtreehouse.com/install-node-js-npm-mac)	| required | require python |
-| Ruby 		| already installed by default	| required | require [installing SASS](http://sass-lang.com/install) |
-| SASS 		| required	| required | [require ruby](http://sass-lang.com/install) |
-| Grunt		| required	| required | [require node.js] |
-| Compass 	| required	| required | ruby gems & [required for SASS](http://thesassway.com/beginner/getting-started-with-sass-and-compass) |
-| GitHub Account |   	|	|	|	
-| Git Shell |   	|	|	|
+| 1. Python	| installed by default	| required for node.js | [v2.7.3 required](https://nodejs.org/en/download/) |
+| 2. Node.js 	| [required](http://blog.teamtreehouse.com/install-node-js-npm-mac)	| [required](https://nodejs.org/en/download/) |	|
+| 3. Ruby 		| installed by default	| required for SASS| 	|
+| 4. SASS 		| [required](http://sass-lang.com/install)	| required  |	|
+| 5. Grunt	| [required](http://gruntjs.com/getting-started)| [required](http://gruntjs.com/getting-started) |
+| 6. Compass 	| [required](http://thesassway.com/beginner/getting-started-with-sass-and-compass)	| required | ruby gems & [required for SASS](http://thesassway.com/beginner/getting-started-with-sass-and-compass) |
+
+You can install Python, Node.js and Ruby through their excutable file, but for others you need to run commands tool for installation. You need to run as an administrator to install. For mac you can use `sudo` at every command and for windows run as administrator.
+
+**SASS**
+`gem install sass` 
+
+**Grunt**
+`npm install -g grunt-cli`
+
+**Compass**
+`gem install compass`
 
 ##Folder Structure
 ```
@@ -51,7 +78,7 @@ ts-wp-plugin-template
 ```
 
 ###Setup Project
-1. Download or clone ts-wp-plugin-template to your computer
+1. Download or clone ts-wp-plugin-template to your computer, for clone its require to have Git installed and GitHub account
 2. In your terminal/cli navigate to the plugin directory ts-wp-plugin-template
 3. Install node_module using the command `npm install`
   
@@ -185,21 +212,3 @@ ts-wp-plugin-template
    >use `grunt watch` in the beginning of editing for watching every change,
    >make sure to `grunt build` every time the editing is done
 
-2. ts-wp-plugin-template has branch each branch have a different function 
-	```branch
-	ts-wp-plugin-template
-	|-- master / ver-default
-	|-- ver-ajax
-	|-- ver-ajax+piklist
-	`-- ver-piklist
-	
-	//This tutorial is using ver-ajax
-	```
-	 
-	* master is the default template 
-	* ver-ajax has ajax function inside
-	* ver-ajax+piklist has ajax and also [piklist](https://piklist.com/)
-	* ver-piklist has [piklist](https://piklist.com/) inside
-  
-
-    
