@@ -4,24 +4,16 @@
 
 **Windows User need to have**
 
-| Installed	|		|
-|---		|---	|
-| Ruby 		| required for [installing SASS](http://sass-lang.com/install)	|
-| Python	| v2.7.3 recommended	|
-| Node.js 	| require python  	|
-| SASS 		| ruby gems 	|
-| Grunt		| require node.js	|
-| Compass 	| ruby gems  	|
-| GitHub Account |   	|
-| Git Shell |   	|
-
-**Mac user need to have**
-* Node.js
-* SASS
-* Grunt
-* Compass
-* Have a GIT account
-* Git for desktop
+| 		| Mac	| Windows install | Notes (For Windows) |
+|---		|---	|---  	|---	|
+| Python	| already installed by default	| required | [v2.7.3 recommended](https://nodejs.org/en/download/) |
+| Node.js 	| [required](http://blog.teamtreehouse.com/install-node-js-npm-mac)	| required | require python |
+| Ruby 		| already installed by default	| required | require [installing SASS](http://sass-lang.com/install) |
+| SASS 		| required	| required | [require ruby](http://sass-lang.com/install) |
+| Grunt		| required	| required | [require node.js] |
+| Compass 	| required	| required | ruby gems & [required for SASS](http://thesassway.com/beginner/getting-started-with-sass-and-compass) |
+| GitHub Account |   	|	|	|	
+| Git Shell |   	|	|	|
 
 ##Folder Structure
 ```
